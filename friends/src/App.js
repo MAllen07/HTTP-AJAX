@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios'
-import FriendsList from "./Components/FriendsList";
+import FriendsList from "./Component/FriendsList";
 import { Route, } from 'react-router-dom';
 import FriendsForm from "./Component/FriendsForm";
 
