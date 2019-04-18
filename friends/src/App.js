@@ -1,19 +1,20 @@
-import React, { Component } from 'react';
-import './App.css';
-import axios from 'axios'
-import FriendsList from "./Component/FriendsList";
-import { Route, } from 'react-router-dom';
-import FriendsForm from "./Component/FriendsForm";
+import React from "react";
+import ReactDOM from "react-dom";
+import axios from "axios";
+import { Route, Link } from 'react-router-dom';
+import "./App.css";
+import FriendList from "./Component/FriendList";
+import FriendForm from "./Component/FriendForm";
+import UpdateFriend from "./Component/UpdateFriend";
 
 
-
-class App extends Component {
-
-  constructor (props) {
-    super(props)
-    this.state ={
-      friends: [],
-    }
+class App extends React.Component{
+  constructor() {
+    super();
+    this.state = {
+      friends: []
+      // postFriendMessage: ''
+    };
   }
 
   componentDidMount() {
@@ -75,12 +76,12 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Friends</h1>
-        <Route exact path="/" render={props => <FriendsList {...props} updateFriend={this.updatefriend} deleteFriend={this.deleteFriend} friends={this.state.friends}/> }/>
-      
-        <FriendsForm 
+        <Route exact path="/" render={props => <FriendList {...props} updateFriend={this.updatefriend} deleteFriend={this.deleteFriend} friends={this.state.friends}/> }/>
+        {/* <Route path ="/friends" /> */}
+        <FriendForm 
           postFriend={this.postFriend}
         />
-        
+        <Route exact path='/friends/:id' render={props =>  <UpdateFriend updateFriend={this.updateFriend} />} />
       </div>
     );
   }

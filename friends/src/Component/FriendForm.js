@@ -1,7 +1,7 @@
 import React from "react";
 // import styled from 'styled-components';
 
-class FriendsForm extends React.Component {
+class FriendForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -37,7 +37,7 @@ class FriendsForm extends React.Component {
 
     render(){
         return (
-            <div className="friends-form">
+            <div className="friend-form">
                 <h1>Post a new Friend </h1>
                 <form onSubmit={this.postFriend}>
                     <input
@@ -68,4 +68,4 @@ class FriendsForm extends React.Component {
     }
 }
 
-export default FriendsForm;
+export default FriendForm;
